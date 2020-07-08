@@ -16,4 +16,4 @@ build_and_deploy:
     - mvn clean deploy
   artifacts:
     paths:
-      - target/${CI_PROJECT_NAME}-${P28_VERSION_STRING}.jar
+      - target/${CI_PROJECT_NAME}-*.jar
