@@ -1,0 +1,19 @@
+stages:
+  - build
+
+build_and_deploy:
+  tags:
+    - java10
+    - maven
+  stage: build
+  only:
+    - develop
+    - master
+  script:
+    - bash ./change_version.sh
+    - . ${CI_PROJECT_NAME}_version.env
+    - j2 -f env pom.xml.jinja2 > pom.xml
+    - mvn clean deploy
+  artifacts:
+    paths:
+      - target/${CI_PROJECT_NAME}-${P28_VERSION_STRING}.jar
