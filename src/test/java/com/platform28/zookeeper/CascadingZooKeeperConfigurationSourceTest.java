@@ -80,11 +80,9 @@ public class CascadingZooKeeperConfigurationSourceTest {
     @Test
     public void testCascadingDynamicPropertyFactory() throws Exception {
         // cascading: should return value of property child_1/key1 = child_1.key1
-        Assert.assertEquals("child_1.key1", CascadingDynamicPropertyFactory
-                .getStringProperty("/child_1/child_2", "key1", "default").get());
+        Assert.assertEquals("child_1.key1", new CascadingDynamicStringProperty("/child_1/child_2", "key1", "default").get());
 
-        Assert.assertEquals("test.value2-zk", CascadingDynamicPropertyFactory
-                .getStringProperty("/child_1/child_2", "test.key2", "default").get());
+        Assert.assertEquals("test.value2-zk", new CascadingDynamicStringProperty("/child_1/child_2", "test.key2", "default").get());
     }
 
     @Test
