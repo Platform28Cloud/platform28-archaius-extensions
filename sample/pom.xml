@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>platform28-archaius-extensions</groupId>
+    <artifactId>example</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>key-updater</module>
+        <module>client-application</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <p28.api.version>2</p28.api.version>
+        <java.version>10</java.version>
+        <version.thorntail>2.4.0.Final</version.thorntail>
+        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>10</maven.compiler.target>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <commons.configuration>1.8</commons.configuration>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>Platform28 Artifactory</name>
+            <url>http://artifactory.platform28.com:8081/artifactory/simple/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>central</id>
+            <name>Platform28 Artifactory</name>
+            <url>http://artifactory.platform28.com:8081/artifactory/simple/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.platform28</groupId>
+            <artifactId>platform28-archaius-extensions</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>${commons.configuration}</version>
+        </dependency>
+    </dependencies>
+</project>
