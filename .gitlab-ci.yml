@@ -12,7 +12,9 @@ build_and_deploy:
   script:
     - bash ./change_version.sh
     - . ${CI_PROJECT_NAME}_version.env
-    - j2 -f env pom.xml.jinja2 > pom.xml
+    - echo "Changing version to "${P28_VERSION_STRING}
+    - mvn versions:set -DnewVersion=${P28_VERSION_STRING}
+    - mvn versions:commit
     - mvn clean deploy
   artifacts:
     paths:

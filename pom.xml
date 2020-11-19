@@ -6,7 +6,7 @@
     <groupId>com.platform28</groupId>
     <artifactId>platform28-archaius-extensions</artifactId>
 
-    <version>{{P28_VERSION_STRING}}</version>
+    <version>0.0</version>
     <packaging>ejb</packaging>
 
     <properties>
